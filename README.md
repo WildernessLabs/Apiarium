@@ -11,3 +11,7 @@ It runs on solar power with battery backup, and tracks key bee health and activi
 
 And can also, optionally, track external climate data including temp, humidity, and pressure.
 
+
+## [Documentation](Documentation)
+
+For a complete instructions on building and installing, check out the [documentation](documentation). 
