@@ -28,9 +28,9 @@ Additionally, you'll need the following supporting hardware assemble and mount i
 
 | Component | Description | Image |
 |-----------|-------------|-------|
-| (4) M2 heat-set inserts | Provides structural integrity for lid attachment. | ![](Photos/M2_Heat-Set_Inserts.jpg) |
-| (8) M2 x 4mm socket head bolts | Attaches Meadow and Lid to box. | ![](Photos/M2x4mm_Socket_Screws.jpg) |
-| (2) Wood screws (what size?) | Attaches enclosure to frame. | ![](Photos/Wood_Screws.jpg) |
+| (4) M2 heat-set inserts | Provides structural integrity for lid attachment. | ![](Photos/M2_Heat-Set_Inserts_small.jpg) |
+| (8) M2 x 4mm socket head bolts | Attaches Meadow and Lid to box. | ![](Photos/M2x4mm_Socket_Screws_small.jpg) |
+| (2) Wood screws (what size?) | Attaches enclosure to frame. | ![](Photos/Wood_Screws_small.jpg) |
 
 ### Core Meadow Controller and Components
 
