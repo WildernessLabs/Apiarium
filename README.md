@@ -1,4 +1,4 @@
-# Apiarium
+![](Design/Apiarium_Logo.svg)
 
 Open source, open-hardware, modern beehive monitoring powered by Meadow.
 
