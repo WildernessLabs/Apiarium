@@ -36,11 +36,11 @@ Additionally, you'll need the following supporting hardware assemble and mount i
 
 | Component | Description | Image |
 |-----------|-------------|-------|
-| **[Meadow F7 Dev Board](https://store.wildernesslabs.co/collections/frontpage/products/meadow-f7)** | | |
+| **[Meadow F7 Dev Board](https://store.wildernesslabs.co/collections/frontpage/products/meadow-f7)** | | ![](Photos/Meadow_F7_small.jpg) |
 | **Meadow Expansion FeatherWing Board** | Provides a permanent platform for attaching components to Meadow. | |
 | **Si7021 Temp & Humidity Sensor [SparkFun](https://www.sparkfun.com/products/13763), [Adafruit](https://www.adafruit.com/product/3251)** | I2C temp and humidity sensor. | |
 | Breakaway Header | For attaching the Si7021 to the expansion board. | |
-| [`3.7V`, `4400mAh` LiIon Battery](https://www.adafruit.com/product/354) | |
+| [LiIon Battery](https://www.adafruit.com/product/354) | |
 | Microphone (which?) | Measures beehive activity via sound. | |
 
 
