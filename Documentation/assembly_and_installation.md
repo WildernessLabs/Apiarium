@@ -56,3 +56,8 @@ Additionally, you'll need the following supporting hardware assemble and mount i
 # Installation
 
 [Recommend that you assembly everything and get it validated working before installation]
+
+## Installing in Frame
+
+![](Photos/Core_Enclosure_in_Frame_Front_medium.jpg)
+![](Photos/Core_Enclosure_in_Frame_Back_medium.jpg)
