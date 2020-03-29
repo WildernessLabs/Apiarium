@@ -7,7 +7,7 @@ For the most basic setup, that only tracks internal temp, humidity, and activity
 | Component | Description | Image |
 |-----------|-------------|-------|
 | **[Langstroth Hive](https://en.wikipedia.org/wiki/Langstroth_hive)** | Modern standard beekeeping hive design. You may be able to fit the enclosure in other hives, but it was designed to fit a standard Langstroth frame. | |
-| **Meadow Apiarium Core Enclosure** | Mounts in a hive frame and contains the core electronics. | |
+| **Meadow Apiarium Core Enclosure** | Mounts in a hive frame and contains the core electronics. | ![](Photos/Enclosure_small.jpg) |
 | **Core Meadow Controller and Components** | The main components that run the whole thing. | |
 | **Solar Panel** | Used to power the system and charge the battery. | |
 
@@ -21,8 +21,8 @@ The enclosure has two parts, the main enclosure bottom, and a lid:
 
 | Component | Image |
 |-----------|-------|
-| [Enclosure_Bottom.stl](/Design/Industrial_Design/Printable_Parts/Enclosure_Bottom.stl) | |
-| [Enclosure_Top.stl](/Design/Industrial_Design/Printable_Parts/Enclosure_Top.stl) | |
+| [Enclosure_Bottom.stl](/Design/Industrial_Design/Printable_Parts/Enclosure_Bottom.stl) | ![](Photos/Enclosure_Bottom_small.jpg) |
+| [Enclosure_Top.stl](/Design/Industrial_Design/Printable_Parts/Enclosure_Top.stl) | ![](Photos/Enclosure_Lid_small.jpg) |
 
 Additionally, you'll need the following supporting hardware assemble and mount it:
 
