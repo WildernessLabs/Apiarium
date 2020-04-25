@@ -45,10 +45,11 @@ namespace MeadowApp
 
             //// Note that the filter is an optional parameter. If you're
             //// interested in all notifications, don't pass a filter/predicate.
-            //si7021.Subscribe(new FilterableObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
-            //    e => {
-            //        Console.WriteLine($"Temp: {e.New.Temperature.ToString("###.#º")}");
-            //    }));
+            si7021.Subscribe(new FilterableObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
+                e =>
+                {
+                    Console.WriteLine($"Temp: {e.New.Temperature.ToString("###.#C")}");
+                }));
 
             onboardLed = new RgbPwmLed(device: Device,
                 redPwmPin: Device.Pins.OnboardLedRed,

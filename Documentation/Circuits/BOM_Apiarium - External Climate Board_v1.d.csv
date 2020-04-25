@@ -1,0 +1,6 @@
+ID,Name,Designator,Footprint,Quantity,Manufacturer Part,Manufacturer,Supplier,Supplier Part,DNI
+1,4.7kΩ,"R1,R2",603,2,0603WAF4701T5E,UniOhm,LCSC,C23162,
+2,5555162-1,"RJ3,RJ2",RJ45-TH_5555162-1,2,5555162-1,TE Connectivity,LCSC,C305976,
+3,Optional Solder bridge,U1,I2C ADDRESS JUMPER,1,,,Custom,,DNI
+4,BME280,U3,LGA-8_BME280,1,BME280,Bosch,LCSC,C92489,
+5,0.1µf,"C1,C2",C0603,2,CC0603KRX7R7BB104,YAGEO,LCSC,C108079,
