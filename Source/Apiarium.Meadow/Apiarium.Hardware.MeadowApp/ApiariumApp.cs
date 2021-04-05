@@ -21,6 +21,10 @@ namespace Apiarium.Hardware.MeadowApp
         {
             Initialize().Wait();
             hiveMonitor = HiveMonitor.Instance;
+
+            //
+            Console.WriteLine("Starting up HiveMonitor.");
+            hiveMonitor.Start();
         }
 
         //==== init

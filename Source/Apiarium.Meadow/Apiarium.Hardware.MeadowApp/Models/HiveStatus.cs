@@ -5,8 +5,8 @@ namespace Apiarium.Hardware.MeadowApp.Models
 {
     public class HiveStatus
     {
-        AtmosphericConditions? InternalConditions { get; set; }
-        AtmosphericConditions? ExternalConditions { get; set; }
+        public AtmosphericConditions? InternalConditions { get; set; }
+        public AtmosphericConditions? ExternalConditions { get; set; }
 
         public HiveStatus()
         {

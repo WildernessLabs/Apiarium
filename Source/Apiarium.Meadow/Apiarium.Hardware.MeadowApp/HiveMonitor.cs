@@ -1,15 +1,17 @@
 ﻿using System;
 using Apiarium.Hardware.MeadowApp.Models;
 using Meadow;
-using Meadow.Devices;
-using Meadow.Foundation.Leds;
 using Meadow.Foundation.Sensors.Atmospheric;
 using Meadow.Hardware;
+using Meadow.Peripherals.Sensors.Atmospheric;
 
 namespace Apiarium.Hardware.MeadowApp
 {
     public class HiveMonitor
     {
+        //==== internals
+        bool running = false;
+
         //==== peripherals
         II2cBus i2cBus;
         Si70xx si7021;
@@ -32,7 +34,6 @@ namespace Apiarium.Hardware.MeadowApp
         //==== properties
         public HiveStatus LastKnownHiveStatus { get; set; } = new HiveStatus();
 
-
         //==== init
         void Initialize()
         {
@@ -50,6 +51,12 @@ namespace Apiarium.Hardware.MeadowApp
                 Console.WriteLine($"SI7021, successfully created.");
                 var siReading = si7021.Read().Result;
                 Console.WriteLine($"Initial reading, Temperature: {siReading.Temperature}°C, Humidity: {siReading.Humidity}%.");
+
+                // wire up the notification handler
+                si7021.Subscribe(new FilterableChangeObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
+                    result => OnSi7021Update(result),
+                    null
+                )) ;
             }
 
             //==== external Bme280
@@ -59,9 +66,47 @@ namespace Apiarium.Hardware.MeadowApp
                 Console.WriteLine("BME280 successfullly created.");
                 var bmeReading = bme280.Read().Result;
                 Console.WriteLine($"Initial reading, Temperature: {bme280.Temperature}°C, Humidity: {bme280.Humidity}%, Pressure: {bme280.Pressure}.");
+
+                // wire up the notification handler
+                bme280.Subscribe(new FilterableChangeObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
+                    result => OnBme280Update(result),
+                    null
+                ));
             }
 
             Console.WriteLine("Hardware initialization complete.");
+        }
+
+        public void Start()
+        {
+            // state check
+            if(running) { return; }
+
+            Console.WriteLine("Beginning hive monitoring tasks.");
+            running = true;
+
+            // start updating every 20 seconds.
+            si7021.StartUpdating(20000);
+            bme280.StartUpdating(standbyDuration: 20000);
+        }
+
+        public void Stop()
+        {
+            si7021.StopUpdating();
+            bme280.StopUpdating();
+            running = false;
+        }
+
+        protected void OnSi7021Update(AtmosphericConditionChangeResult result)
+        {
+            Console.WriteLine("SI7021 conditions updated.");
+            this.LastKnownHiveStatus.InternalConditions = result.New;
+        }
+
+        protected void OnBme280Update(AtmosphericConditionChangeResult result)
+        {
+            Console.WriteLine("BME280 conditions updated.");
+            this.LastKnownHiveStatus.ExternalConditions = result.New;
         }
     }
 }

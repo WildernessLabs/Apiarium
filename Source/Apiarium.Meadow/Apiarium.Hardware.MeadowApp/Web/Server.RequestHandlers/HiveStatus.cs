@@ -21,7 +21,7 @@ namespace Apiarium.Hardware.MeadowApp.Web.Server.RequestHandlers
         {
             Console.WriteLine("GET::HiveStatus");
 
-            this.Context.Response.ContentType = ContentTypes.Application_Text;
+            this.Context.Response.ContentType = ContentTypes.Application_Json;
             this.Context.Response.StatusCode = 200;
             this.Send(HiveMonitor.Instance.LastKnownHiveStatus).Wait();
         }
