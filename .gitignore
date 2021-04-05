@@ -351,4 +351,7 @@ MigrationBackup/
 
 # macOS garbage
 *.DS_Store
+**/.DS_Store
 
+# Secrets
+**/Secrets.cs
