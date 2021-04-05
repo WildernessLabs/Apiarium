@@ -1,0 +1,12 @@
+<Project Sdk="Meadow.Sdk/1.1.0">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>App</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Meadow.Foundation" Version="0.*" />
+    <PackageReference Include="Meadow.Foundation.Sensors.Atmospheric.Si70xx" Version="0.1.37" />
+    <PackageReference Include="Meadow.Foundation.Sensors.Atmospheric.Bme280" Version="0.5.39" />
+  </ItemGroup>
+</Project>

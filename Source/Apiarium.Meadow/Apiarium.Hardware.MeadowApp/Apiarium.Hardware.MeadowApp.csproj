@@ -1,0 +1,27 @@
+<Project Sdk="Meadow.Sdk/1.1.0">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>App</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+      <Nullable>enable</Nullable>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+      <Nullable>enable</Nullable>
+      <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Meadow.Foundation" Version="0.*" />
+    <PackageReference Include="Meadow.Foundation.Sensors.Atmospheric.Si70xx" Version="0.1.37" />
+    <PackageReference Include="Meadow.Foundation.Sensors.Atmospheric.Bme280" Version="0.5.39" />
+    <PackageReference Include="Meadow.Foundation.Web.Maple.Server" Version="0.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Web\" />
+    <Folder Include="Web\Server.RequestHandlers\" />
+    <Folder Include="Web\ServiceAccessLayer\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+</Project>
