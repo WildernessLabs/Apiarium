@@ -3,7 +3,7 @@ using Apiarium.Hardware.MeadowApp.Models;
 using Meadow;
 using Meadow.Foundation.Sensors.Atmospheric;
 using Meadow.Hardware;
-using Meadow.Peripherals.Sensors.Atmospheric;
+using Meadow.Units;
 
 namespace Apiarium.Hardware.MeadowApp
 {
@@ -53,10 +53,11 @@ namespace Apiarium.Hardware.MeadowApp
                 Console.WriteLine($"Initial reading, Temperature: {siReading.Temperature}°C, Humidity: {siReading.Humidity}%.");
 
                 // wire up the notification handler
-                si7021.Subscribe(new FilterableChangeObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
+                var si7021Observer = Si70xx.CreateObserver(
                     result => OnSi7021Update(result),
                     null
-                )) ;
+                    );
+                si7021.Subscribe(si7021Observer);
             }
 
             //==== external Bme280
@@ -68,10 +69,11 @@ namespace Apiarium.Hardware.MeadowApp
                 Console.WriteLine($"Initial reading, Temperature: {bme280.Temperature}°C, Humidity: {bme280.Humidity}%, Pressure: {bme280.Pressure}.");
 
                 // wire up the notification handler
-                bme280.Subscribe(new FilterableChangeObserver<AtmosphericConditionChangeResult, AtmosphericConditions>(
+                var bmeObserver = Bme280.CreateObserver(
                     result => OnBme280Update(result),
                     null
-                ));
+                    );
+                bme280.Subscribe(bmeObserver);
             }
 
             Console.WriteLine("Hardware initialization complete.");
@@ -97,16 +99,16 @@ namespace Apiarium.Hardware.MeadowApp
             running = false;
         }
 
-        protected void OnSi7021Update(AtmosphericConditionChangeResult result)
+        protected void OnSi7021Update(IChangeResult<(Temperature? Temperature, RelativeHumidity? Humidity)> result)
         {
             Console.WriteLine("SI7021 conditions updated.");
-            this.LastKnownHiveStatus.InternalConditions = result.New;
+            //this.LastKnownHiveStatus.InternalConditions = result.New;
         }
 
-        protected void OnBme280Update(AtmosphericConditionChangeResult result)
+        protected void OnBme280Update(IChangeResult<(Temperature? Temperature, RelativeHumidity? Humidity, Pressure? Pressure)> result)
         {
             Console.WriteLine("BME280 conditions updated.");
-            this.LastKnownHiveStatus.ExternalConditions = result.New;
+            //this.LastKnownHiveStatus.ExternalConditions = result.New;
         }
     }
 }
